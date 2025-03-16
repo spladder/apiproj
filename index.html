@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+    <title>CS20 HW6</title>
+</head>
+<style>
+
+#joke {
+        font-size: 20px;
+        font-family: Arial, sans-serif;
+        color: #333;
+        text-align: center;
+        margin-top: 50px;
+        border-style:solid; 
+        border-width:4px; 
+        border-color:#b23030;
+        margin:4;
+        padding:5;
+}
+</style>
+
+<body>
+<script>
+        async function getData() {
+                const url = "https://v2.jokeapi.dev/joke/Any?type=single";
+                const response = await fetch(url);
+
+                const json = await response.json();
+                document.getElementById("joke").innerHTML = json.joke;
+        }
+getData();
+</script>
+
+
+<div id = "info">
+        <h1>Here is the info required by the assignment spec:</h1>
+        <p>This site was made using the V2 joke API. I selected it because I think I'm funnier than I am</p>
+        <a href = "https://jokeapi.dev/">You can find joke API HERE</a>
+        <p>I use the "type=single" parameter to ensure I don't get served multi-part jokes that my code can't handle</p>
+        <p>If you needed a random joke, this would be really useful!</p>
+</div>
+<div id = "joke"> <p></p></div>
+
+</body>
+</html>
