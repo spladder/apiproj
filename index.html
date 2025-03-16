@@ -26,7 +26,7 @@
 <body>
 <script>
         async function getData() {
-                const url = "https://v2.jokeapi.dev/joke/Any?type=single";
+                const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
                 const response = await fetch(url);
 
                 const json = await response.json();
@@ -40,7 +40,7 @@ getData();
         <h1>Here is the info required by the assignment spec:</h1>
         <p>This site was made using the V2 joke API. I selected it because I think I'm funnier than I am</p>
         <a href = "https://jokeapi.dev/">You can find joke API HERE</a>
-        <p>I use the "type=single" parameter to ensure I don't get served multi-part jokes that my code can't handle</p>
+        <p>I use the "type=single" parameter to ensure I don't get served multi-part jokes that my code can't handle. And i use the blacklist flags option to prevent inappropriate results</p>
         <p>If you needed a random joke, this would be really useful!</p>
 </div>
 <div id = "joke"> <p></p></div>
